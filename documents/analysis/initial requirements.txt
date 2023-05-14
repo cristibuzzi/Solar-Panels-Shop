@@ -1,0 +1,22 @@
+~~~~~~~~~~~~~~~~Java Web Application used to sell solar power products and provide technical consultancy~~~~~~~~~~~~~~~~
+
+~One window for login, register and forgot password for all accounts (admin and client).
+
+~One window for admin to make CRUD operations on products
+     -view all products,
+     -view product by id,
+     -adding a new product,
+     -deleting a product,
+     -updating a product
+
+~One window for admin to make view and delete operations on orders:
+     -view all orders,
+     -view order by id,
+     -deleting an order,
+
+~One window for client:
+     -view all products,
+     -filter products,
+     -add products to cart,
+     -make orders,
+     -make CRUD operations on basket and profile

@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.sda.onlineshop.Solar-Panels-Shop' is invalid and this project uses 'com.sda.onlineshop.SolarPanelsShop' instead.
+* The original package name 'com.sda.onlineshop.Solar-Panels-Shop' is invalid and this project uses 'com.sda.onlineshop.solarpanelsshop' instead.
 
 # Getting Started
 

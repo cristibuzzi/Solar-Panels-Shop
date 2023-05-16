@@ -1,9 +1,9 @@
 SPS-1: Create database design
 SPS-2: Create system architecture design
 
-SPS-3: Create spring boot template project with all the dependencies
+SPS-3: Create spring boot template project with all the dependencies-done
 SPS-4: Configure database connection and database scheme
-SPS-5: Create hibernate model
+SPS-5: Create hibernate model-done
 SPS-6: Create dummy index page
 SPS-7: Configure spring security
 SPS-8: Implement admin register page (private, only for admin role)

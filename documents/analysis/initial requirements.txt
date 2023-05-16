@@ -35,3 +35,4 @@ The application will have:
 -a window for the customer where he can see all products, filter products, add a product to the shopping cart, place orders and make CRUD operations on the shopping cart and his profile.
 - a window where the client receives custom consultancy on the products required, according to needs and budget
 
+ in header <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />

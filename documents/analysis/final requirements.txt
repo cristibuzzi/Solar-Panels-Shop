@@ -3,7 +3,7 @@
              ~~~Java Web Application used to sell solar power products and provide technical consultancy~~~
 
 ~One window for login, register and forgot password for all accounts (admin and client):
-  The first user will be an admin and he will give roles to the rest of the new users.
+  The first user will be an admin, and he will give roles to the rest of the new users.
      -allows a user to create a new account(email, password, confirm password),
      -allows a user to login on application(email, password),
      -allows a user to recover his password in case he forgot it(email).
@@ -40,7 +40,7 @@ system will allocate a unique id to the new user.
      -repeat password is mandatory be the same as the password
 
    Implement login:
-As a user I should be able to login into my account. The following details are mandatory to login: email and password.
+As a user I should be able to log in into my account. The following details are mandatory to login: email and password.
 If the login details don’t match to an existent account, a message will be displayed. If the login details match an
 existing account then the user will be redirected to the home page.
    The system will validate the following data:
@@ -49,7 +49,7 @@ existing account then the user will be redirected to the home page.
 
    Implement forgot password:
 As a user I should be able to recover my password in case I forgot it. If the email is in the database,
-a link will be sent to that email, where the user can set another passowrd.
+a link will be sent to that email, where the user can set another password.
    The system will validate the following data:
      -mail.
 
@@ -73,7 +73,7 @@ will contain details about products(id, name, price and stock quantity).
 
    Implement view product by id:
 As an admin I should be able to view all the details of an existing product by id. If the given id is found in the
-system, the following details will be shown on the screen: id, name, price, stock quantity, description, specification).
+system, the following details will be shown on the screen: id, name, price, stock quantity, description, specification.
 If the given id is not found in the system, an error message will be shown on the screen.
 
    Implement update product:
@@ -95,7 +95,7 @@ I should be able to update the following data:
    Implement delete product:
 As an admin I should be able to delete an existing product by id from the system. If the given id is found
 in the system the product will be deleted and a message will be shown on the screen. If the given id is not found
-in the system an appropiate error message will be shown on the screen.
+in the system an appropriate error message will be shown on the screen.
 
 
 ~One window for admin to make view and delete operations on orders:
@@ -105,19 +105,54 @@ will contain details about orders(id, products, quantity and price).
 
    Implement view order by id:
 As an admin I should be able to view all the details of an existing order by id. If the given id is found
-in the system, the following details will be shown on the screen: id, products, quantity and price).
+in the system, the following details will be shown on the screen: id, products, quantity and price.
 If the given id is not found in the system, an error message will be shown on the screen.
 
    Implement delete order:
 As an admin I should be able to delete an existing order by id from the system. If the given id is found
 in the system the order will be deleted and a message will be shown on the screen. If the given id is not found
-in the system an appropiate error message will be shown on the screen.
+in the system an appropriate error message will be shown on the screen.
 
 
 ~One window for client:
 As a client I should be able to view all the products the shop has.
 As a client I should be able to filter products by several possibilities.
-As a client I should be able to add a product in my basket.
+As a client I should be able to add a product in my cart.
 As a client I should be able to view my profile details, make changes or even delete it.
-As a client I should be able to create a personal shopping basket by adding products, to delete a product
-from my basket and to update the basket.
+As a client I should be able to create a personal shopping cart by adding products, to delete a product
+from my basket and to update the cart.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

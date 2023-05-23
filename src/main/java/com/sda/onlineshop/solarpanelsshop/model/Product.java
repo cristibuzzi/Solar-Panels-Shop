@@ -2,6 +2,11 @@ package com.sda.onlineshop.solarpanelsshop.model;
 
 import com.sda.onlineshop.solarpanelsshop.model.constant.ProductCategory;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+
 
 @Entity
 @Table(name = "product")
@@ -10,27 +15,53 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
+
+    @NotNull(message = "Name must be not null!")
+    @NotBlank(message = "Name must be not blank!")
+    @Size(min = 2)
     @Column(name = "name")
     private String name;
+
+    @NotNull(message = "Model must be not null!")
+    @NotBlank(message = "Model must be not blank!")
+    @Size(min = 2)
     @Column(name = "model")
     private String model;
-    @Column(name = "category")
+
+    @NotNull(message = "Category must be not null!")
     @Enumerated(EnumType.STRING)
+    @Column(name = "category")
     private ProductCategory category;
+
+    @NotNull(message = "Description must be not null!")
+    @NotBlank(message = "Description must be not blank!")
+    @Size(min = 20)
     @Column(name = "description")
     private String description;
+
+    @NotNull(message = "Price must be not null!")
+    @NotBlank(message = "Price must be not blank!")
+    // @Pattern(regexp = "^\\d{0,8}[.]?\\d{1,4}$")
     @Column(name = "price")
     private Double price;
+
+    @Column(name = "promo_price")
+    private Double promoPrice;
+
+    @Column(name = "main_image_url")
+    private String mainImageURL;
 
     public Product() {
     }
 
-    public Product(String name, String model, ProductCategory category, String description, Double price) {
+    public Product(String name, String model, ProductCategory category, String description, Double price, Double promoPrice, String mainImageURL) {
         this.name = name;
         this.model = model;
         this.category = category;
         this.description = description;
         this.price = price;
+        this.promoPrice = promoPrice;
+        this.mainImageURL = mainImageURL;
     }
 
     public Integer getId() {
@@ -81,15 +112,19 @@ public class Product {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", model='" + model + '\'' +
-                ", category=" + category +
-                ", description='" + description + '\'' +
-                ", price='" + price + '\'' +
-                '}';
+    public Double getPromoPrice() {
+        return promoPrice;
+    }
+
+    public void setPromoPrice(Double promoPrice) {
+        this.promoPrice = promoPrice;
+    }
+
+    public String getMainImageURL() {
+        return mainImageURL;
+    }
+
+    public void setMainImageURL(String mainImageURL) {
+        this.mainImageURL = mainImageURL;
     }
 }

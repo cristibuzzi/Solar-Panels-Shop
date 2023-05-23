@@ -1,6 +1,9 @@
 package com.sda.onlineshop.solarpanelsshop.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "product_order")
@@ -10,11 +13,17 @@ public class ProductOrder {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
+
+    @NotNull(message = "Quantity must be not null!")
+    @NotBlank(message = "Quantity must be not blank!")
+    //@Pattern(regexp = "^[0-9]+$")
     @Column(name = "quantity")
     private Integer quantity;
+
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
+
     @ManyToOne
     @JoinColumn(name = "order_id")
     private Order order;

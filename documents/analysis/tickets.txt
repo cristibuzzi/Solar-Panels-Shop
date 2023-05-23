@@ -4,9 +4,13 @@ SPS-2: Create system architecture design
 SPS-3: Create spring boot template project with all the dependencies-------DONE
 SPS-4: Configure database connection and database scheme-------------------DONE
 SPS-5: Create hibernate model----------------------------------------------DONE
-SPS-6: Create dummy index page
-SPS-7: Configure spring security
-SPS-8: Implement admin register page (private, only for admin role)
+
+SPS-6: Create dummy index page---------------------------------------------DONE
+SPS-7: Configure spring security....................................          .......DONE
+
+SPS-8 Implement login/log out.........................................................DONE
+
+SPS-9: Implement admin register page (private, only for admin role)..............DONE
         As an admin I should be able to create a new account with the following details:
         email as username, password and repeat password(it is mandatory that passwords be the same).
         If the register process is successful the system will allocate a unique id to the new user.
@@ -14,7 +18,7 @@ SPS-8: Implement admin register page (private, only for admin role)
              -email to be not blank, not empty and not allocated to another user
              -password to be not blank, not empty and larger than 8 characters
              -repeat password is mandatory be the same as the password
-SPS-9: Implement client register page (public)
+SPS-10: Implement client register page (public)...............................DONE
         As a client I should be able to create a personal account with the following details:
         email as username, password and repeat password(it is mandatory that passwords be the same).
         If the register process is successful the system will allocate a unique id to the new client.
@@ -31,7 +35,7 @@ SPS-10: Implement log in:
              -password
 SPS-11: Implement forgot password page (public)
        As a user I should be able to recover my password in case I forgot it. If the email is in the database,
-       a link will be sent to that email, where the user can set another passowrd.
+       a link will be sent to that email, where the user can set another password.
        The system will validate the following data:
              -mail
 SPS-12: Implement product creation:

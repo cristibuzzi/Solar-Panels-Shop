@@ -2,6 +2,10 @@ package com.sda.onlineshop.solarpanelsshop.model;
 
 import com.sda.onlineshop.solarpanelsshop.model.constant.OrderStatus;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Pattern;
 
 import java.util.Date;
 import java.util.List;
@@ -13,14 +17,27 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_number")
     private String orderNumber;
+
+    @NotNull(message = "Date of order must be not null!")
+    @PastOrPresent(message = "Date must be from present or past!")
     @Column(name = "date_of_order")
     private Date dateOfOrder;
+
+    @NotNull(message = "Status must be not null")
+    @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private OrderStatus status;
+
+    @NotNull(message = "Amount must be not null!")
+    @NotBlank(message = "Amount must be not blank!")
+    //@Pattern(regexp = "^\\d{0,8}[.]?\\d{1,4}$")
     @Column(name = "total_amount")
     private Double totalAmount;
+
     @ManyToOne
     @JoinColumn(name = "client_profile_id")
     private ClientProfile clientProfile;

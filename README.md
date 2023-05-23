@@ -24,4 +24,4 @@ In this project I used technologies such as:
 ### System architecture
 
 ### Database design
-![diagrama bazei de date.png](src%2Fmain%2Fresources%2Fdesign%2Fdiagrama%20bazei%20de%20date.png)
+![diagrama bazei de date.png](documents%2Fdesign%2Fdiagrama%20bazei%20de%20date.png)

@@ -22,16 +22,21 @@ public class SecurityConfiguration {
                         "/javax",
                         "/css/**",
                         "/img/**",
+                        "/images/**",
                         "/js/**",
                         "/vendor/**",
                         "/webjars/**",
                         "/*/webjars/**",
                         "/client-register/**",
+                        "/consultancy/**",
                         "/",
                         "/index",
-                        "/home"
+                        "/home",
+                        "/shopping-cart-add/**",
+                        "/shopping-cart/**"
+
                 ).permitAll()
-                .requestMatchers("/admin-register")
+                .requestMatchers("/admin-register", "/add-product")
                 .hasAuthority("ADMIN")
                 .anyRequest()
                 .authenticated()

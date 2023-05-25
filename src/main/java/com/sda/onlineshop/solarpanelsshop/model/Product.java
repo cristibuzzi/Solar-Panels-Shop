@@ -7,6 +7,8 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
+import java.util.Objects;
+
 
 @Entity
 @Table(name = "product")
@@ -40,8 +42,6 @@ public class Product {
     private String description;
 
     @NotNull(message = "Price must be not null!")
-    @NotBlank(message = "Price must be not blank!")
-    // @Pattern(regexp = "^\\d{0,8}[.]?\\d{1,4}$")
     @Column(name = "price")
     private Double price;
 
@@ -126,5 +126,18 @@ public class Product {
 
     public void setMainImageURL(String mainImageURL) {
         this.mainImageURL = mainImageURL;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return Objects.equals(id, product.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

@@ -14,16 +14,16 @@ public class ConsultancyRequest {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-    @NotNull(message = "Average monthly consumption must be not null!")
-    @NotBlank(message = "Average monthly consumption must be not blank!")
+//    @NotNull(message = "Average monthly consumption must be not null!")
+//    @NotBlank(message = "Average monthly consumption must be not blank!")
    // @Pattern(regexp = "^\\d{0,8}[.]?\\d{1,4}$")
     @Column(name = "average_monthly_consumption")
     private Double averageMonthlyConsumption;
-    @NotNull(message = "Roof type must be not null")
+//    @NotNull(message = "Roof type must be not null")
     @Enumerated(EnumType.STRING)
     @Column(name = "roof_type")
     private ConsultancyRoofType roofType;
-    @NotNull(message = "Products type must be not null")
+//    @NotNull(message = "Products type must be not null")
     @Enumerated(EnumType.STRING)
     @Column(name = "products_type")
     private ConsultancyProductsType productsType;
@@ -41,19 +41,19 @@ public class ConsultancyRequest {
         this.roofType = roofType;
         this.productsType = productsType;
     }
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public double getAverageMonthlyConsumption() {
+    public Double getAverageMonthlyConsumption() {
         return averageMonthlyConsumption;
     }
 
-    public void setAverageMonthlyConsumption(double averageMonthlyConsumption) {
+    public void setAverageMonthlyConsumption(Double averageMonthlyConsumption) {
         this.averageMonthlyConsumption = averageMonthlyConsumption;
     }
 
@@ -81,13 +81,4 @@ public class ConsultancyRequest {
         this.client = client;
     }
 
-    @Override
-    public String toString() {
-        return "Consultancy{" +
-                "id=" + id +
-                ", averageMonthlyConsumption=" + averageMonthlyConsumption +
-                ", roofType=" + roofType +
-                ", productsType=" + productsType +
-                '}';
-    }
 }

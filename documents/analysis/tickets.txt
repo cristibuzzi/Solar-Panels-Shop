@@ -44,14 +44,16 @@ SPS-12: Implement product creation-----------------------------------------DONE
              -stock quantity to be not blank, not empty, higher than 0. If the stock quantity is equal to 0,
              a message must be printed.
              -specification to be not blank and not empty.
-SPS-13: Implement view all products:
+SPS-13: Implement add to cart----------------------------------------------DONE
+        As a client I should be able to add a product in my cart.
+SPS-14: Implement view all products:
         As a user I should be able to view all the existing products. I should be able to view a list where each line
         will contain details about products(id, name, price and stock quantity).
-SPS-14:Implement delete product:
+SPS-15:Implement delete product:
                As an admin I should be able to delete an existing product by id from the system. If the given id is found
                in the system the product will be deleted and a message will be shown on the screen. If the given id is not found
                in the system an appropriate error message will be shown on the screen.
-SPS-15: Implement update product:
+SPS-16: Implement update product:
         As an admin I should be able to update the details of an existing product. If the product is found by id in the system,
         I should be able to update the following data:
              -name,
@@ -66,12 +68,11 @@ SPS-15: Implement update product:
              -stock quantity to be not blank, not empty, higher than 0. If the stock quantity is equal to 0,
              a message must be printed.
              -specification to be not bland and not empty.
-SPS-16: Implement view product by id:
+SPS-17: Implement view product by id:
         As a user I should be able to view all the details of an existing product by id. If the given id is found in the
         system, the following details will be shown on the screen: id, name, price, stock quantity, description, specification).
         If the given id is not found in the system, an error message will be shown on the screen.
-SPS-17: Implement add to cart
-        As a client I should be able to add a product in my cart.
+
 SPS-18: Implement view cart
         As a client I should be able to view products from my cart.
 SPS-19: Implement send order

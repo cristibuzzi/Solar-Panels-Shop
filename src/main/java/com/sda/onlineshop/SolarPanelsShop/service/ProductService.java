@@ -9,6 +9,8 @@ public interface ProductService {
     List<Product> getAll();
 
     void create(Product product);
+    void update(int id, Product product);
+    void delete(int id);
 
     Optional<Product> findById(int id);
 }

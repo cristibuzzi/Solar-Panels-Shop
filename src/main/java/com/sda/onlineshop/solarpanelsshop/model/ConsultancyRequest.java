@@ -8,17 +8,20 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 @Entity
-@Table(name = "consultancy")
+@Table(name = "consultancy_request")
 public class ConsultancyRequest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-//    @NotNull(message = "Average monthly consumption must be not null!")
+
+    @NotNull(message = "Average monthly consumption must be not null!")
 //    @NotBlank(message = "Average monthly consumption must be not blank!")
-   // @Pattern(regexp = "^\\d{0,8}[.]?\\d{1,4}$")
+//    @Pattern(regexp = "^\\d{0,8}[.]?\\d{1,4}$")
     @Column(name = "average_monthly_consumption")
     private Double averageMonthlyConsumption;
+
+
 //    @NotNull(message = "Roof type must be not null")
     @Enumerated(EnumType.STRING)
     @Column(name = "roof_type")
@@ -30,17 +33,18 @@ public class ConsultancyRequest {
 
     @ManyToOne
     @JoinColumn(name = "client_profile_id")
-    private ClientProfile client;
+    private ClientProfile clientProfile;
 
 
     public ConsultancyRequest() {
     }
 
-    public ConsultancyRequest(double averageMonthlyConsumption, ConsultancyRoofType roofType, ConsultancyProductsType productsType) {
+    public ConsultancyRequest(Double averageMonthlyConsumption, ConsultancyRoofType roofType, ConsultancyProductsType productsType) {
         this.averageMonthlyConsumption = averageMonthlyConsumption;
         this.roofType = roofType;
         this.productsType = productsType;
     }
+
     public Integer getId() {
         return id;
     }
@@ -54,6 +58,9 @@ public class ConsultancyRequest {
     }
 
     public void setAverageMonthlyConsumption(Double averageMonthlyConsumption) {
+        if(averageMonthlyConsumption<=0){
+            throw new IllegalArgumentException("Average monthly consumption must be greater than 0!!!");
+        }
         this.averageMonthlyConsumption = averageMonthlyConsumption;
     }
 
@@ -74,11 +81,11 @@ public class ConsultancyRequest {
     }
 
     public ClientProfile getClient() {
-        return client;
+        return clientProfile;
     }
 
     public void setClient(ClientProfile client) {
-        this.client = client;
+        this.clientProfile = client;
     }
 
 }

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
@@ -33,5 +34,40 @@ public class ProductController {
         }
         productService.create(product);
         return "redirect:/add-product?success";
+    }
+
+    @GetMapping("/update-product/{id}")
+    public String showUpdateProductPage(@PathVariable("id") int id, Model model) {
+        Product product = productService.findById(id)
+                .orElseThrow();
+        model.addAttribute("product", product);
+
+        return "update-product";
+    }
+
+    @PostMapping("/update-product/{id}")
+    public String updateProduct(@PathVariable("id") int id, @Valid @ModelAttribute("product") Product product, BindingResult result) {
+        if (result.hasErrors()) {
+            return "update-product";
+        }
+
+        Product existingProduct = productService.findById(id)
+                .orElseThrow();
+
+        existingProduct.setName(product.getName());
+        existingProduct.setCategory(product.getCategory());
+        existingProduct.setDescription(product.getDescription());
+        existingProduct.setPrice(product.getPrice());
+        existingProduct.setPromoPrice(product.getPromoPrice());
+        existingProduct.setMainImageURL(product.getMainImageURL());
+
+        productService.update(id,existingProduct);
+
+        return "redirect:/";
+    }
+    @GetMapping("/delete-product/{id}")
+    public String deleteProduct(@PathVariable("id") int id){
+        productService.delete(id);
+        return "redirect:/";
     }
 }

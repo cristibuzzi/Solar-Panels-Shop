@@ -14,9 +14,6 @@ public class ProductOrder {
     @Column(name = "id")
     private Integer id;
 
-    @NotNull(message = "Quantity must be not null!")
-    @NotBlank(message = "Quantity must be not blank!")
-    //@Pattern(regexp = "^[0-9]+$")
     @Column(name = "quantity")
     private Integer quantity;
 

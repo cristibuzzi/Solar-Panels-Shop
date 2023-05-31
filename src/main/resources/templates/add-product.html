@@ -39,17 +39,18 @@
                             error</p>
                     </div>
 
-                    <div class="form-group"
-                         th:classappend="${#fields.hasErrors('category')}? 'has-error':''">
-                        <label for="category" class="control-label">Category</label>
-                        <select class="form-control input-lg" name="category" autofocus="true" id="category"
-                                th:field="*{category}">
-                            <option th:each="opt:${T(com.sda.onlineshop.solarpanelsshop.model.constant.ProductCategory).values()}"
-                                    th:text="${opt.name()}" th:value="${opt}">
 
-                            </option>
-
-                        </select>
+                    <div class="form-group">
+                        <label for="category's">Category</label>
+                        <div class="dropdown">
+                            <select class="form-control input-lg" id="category's" name="category">
+                                <option>--Select category--</option>
+                                <option th:each="opt:${T(com.sda.onlineshop.solarpanelsshop.model.constant.ProductCategory).values()}"
+                                        th:text="${opt}" th:value="${opt.name()}"></option>
+                            </select>
+                        </div>
+                        <span th:if="${#fields.hasErrors('category')}" th:errors="*{category}"
+                              class="text-danger"></span>
                     </div>
 
 

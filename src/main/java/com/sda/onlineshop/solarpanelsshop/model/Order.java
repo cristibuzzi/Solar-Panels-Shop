@@ -18,12 +18,12 @@ public class Order {
     @Column(name = "id")
     private Integer id;
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Column(name = "order_number")
     private String orderNumber;
 
-    @NotNull(message = "Date of order must be not null!")
-    @PastOrPresent(message = "Date must be from present or past!")
+//    @NotNull(message = "Date of order must be not null!")
+//    @PastOrPresent(message = "Date must be from present or past!")
     @Column(name = "date_of_order")
     private Date dateOfOrder;
 
@@ -32,8 +32,8 @@ public class Order {
     @Column(name = "status")
     private OrderStatus status;
 
-    @NotNull(message = "Amount must be not null!")
-    @NotBlank(message = "Amount must be not blank!")
+//    @NotNull(message = "Amount must be not null!")
+//    @NotBlank(message = "Amount must be not blank!")
     //@Pattern(regexp = "^\\d{0,8}[.]?\\d{1,4}$")
     @Column(name = "total_amount")
     private Double totalAmount;
@@ -94,14 +94,21 @@ public class Order {
         this.totalAmount = totalAmount;
     }
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", orderNumber='" + orderNumber + '\'' +
-                ", dateOfOrder=" + dateOfOrder +
-                ", status=" + status +
-                ", totalAmount=" + totalAmount +
-                '}';
+    public ClientProfile getClientProfile() {
+        return clientProfile;
     }
+
+    public void setClientProfile(ClientProfile clientProfile) {
+        this.clientProfile = clientProfile;
+    }
+
+    public List<ProductOrder> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<ProductOrder> products) {
+        this.products = products;
+    }
+
+
 }

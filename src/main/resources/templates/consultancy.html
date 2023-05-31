@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header :: header-css"></head>
+
+<body>
+<div th:replace="fragments/header :: header"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5 col-xl-5 mx-auto">
+            <div th:if="${param.success}">
+                <div class="alert alert-info">
+                    We hope you find this advice helpful!
+                </div>
+            </div>
+
+            <h1>Enter your data</h1>
+
+
+            <form th:action="@{/consultancy}" th:object="${consultancy}" method="post">
+
+
+                <div class="form-group"
+                     th:classappend="${#fields.hasErrors('averageMonthlyConsumption')}? 'has-error':''">
+                    <label for="averageMonthlyConsumption" class="control-label">Average monthly consumption
+                        (kw/h)</label>
+                    <input
+                            id="averageMonthlyConsumption" class="form-control"
+                            th:field="*{averageMonthlyConsumption}"/>
+                    <p class="error-message"
+                       th:each="error : ${#fields.errors('averageMonthlyConsumption')}" th:text="${error}">Validation
+                        error</p>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="roofType">Roof type</label>
+                    <div class="dropdown">
+                        <select class="form-control" id="roofType" name="roofType">
+                            <option>--Select a roof type--</option>
+                            <option th:each="opt:${T(com.sda.onlineshop.solarpanelsshop.model.constant.ConsultancyRoofType).values()}"
+                                    th:text="${opt}" th:value="${opt.name()}"></option>
+                        </select>
+                    </div>
+                    <span th:if="${#fields.hasErrors('roofType')}" th:errors="*{roofType}"
+                          class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="productsType">Products type</label>
+                    <div class="dropdown">
+                        <select class="form-control input-lg" id="productsType" name="productsType">
+                            <option>--Select products type--</option>
+                            <option th:each="opt:${T(com.sda.onlineshop.solarpanelsshop.model.constant.ConsultancyProductsType).values()}"
+                                    th:text="${opt}" th:value="${opt.name()}"></option>
+                        </select>
+                    </div>
+                    <span th:if="${#fields.hasErrors('productsType')}" th:errors="*{productsType}"
+                          class="text-danger"></span>
+                </div>
+
+
+                <div class="d-grid mb-2">
+                    <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">
+                        Show me!
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+</body>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+</html>
+
+

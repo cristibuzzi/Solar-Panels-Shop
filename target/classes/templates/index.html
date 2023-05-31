@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 
 <head th:replace="fragments/header :: header-css"></head>
 
@@ -45,9 +46,14 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto"
-                                                        th:href="${'/shopping-cart-add/' + product.getId()}">Add to
-                                cart</a>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" sec:authorize="hasAuthority('CLIENT')"
+                                                        th:href="${'/shopping-cart-add/' + product.getId() + '?origin=/home'}">Add to cart</a>
+                            </div>
+                            <div class="text-center" sec:authorize="hasAuthority('ADMIN')" ><a class="far fa-edit"
+                                                                                               th:href="${'/update-product/'+product.getId()+'?origin=home'}">Update</a>
+                            </div>
+                            <div class="text-center" sec:authorize="hasAuthority('ADMIN')" ><a class="fas fa-trash-alt"
+                                                                                               th:href="${'/delete-product/'+product.getId()+'?origin=home'}">Delete</a>
                             </div>
                         </div>
                     </div>

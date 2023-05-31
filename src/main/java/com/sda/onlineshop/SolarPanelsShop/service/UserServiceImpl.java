@@ -1,7 +1,9 @@
 package com.sda.onlineshop.solarpanelsshop.service;
 
+import com.sda.onlineshop.solarpanelsshop.model.ClientProfile;
 import com.sda.onlineshop.solarpanelsshop.model.constant.UserRole;
 import com.sda.onlineshop.solarpanelsshop.model.User;
+import com.sda.onlineshop.solarpanelsshop.repository.ClientProfileRepository;
 import com.sda.onlineshop.solarpanelsshop.repository.UserRepository;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,11 +16,13 @@ import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
+    private final ClientProfileRepository clientProfileRepository;
 
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository, BCryptPasswordEncoder passwordEncoder) {
+    public UserServiceImpl(ClientProfileRepository clientProfileRepository, UserRepository userRepository, BCryptPasswordEncoder passwordEncoder) {
+        this.clientProfileRepository = clientProfileRepository;
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
@@ -43,6 +47,11 @@ public class UserServiceImpl implements UserService {
                 role,
                 phoneNumber
         );
+        if (role.equals(UserRole.CLIENT)) {
+            ClientProfile clientProfile = new ClientProfile();
+            clientProfileRepository.save(clientProfile);
+            user.setClientProfile(clientProfile);
+        }
         userRepository.save(user);
     }
 

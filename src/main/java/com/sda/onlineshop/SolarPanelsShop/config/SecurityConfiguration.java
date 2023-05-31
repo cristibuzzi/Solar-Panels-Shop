@@ -12,9 +12,10 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 public class SecurityConfiguration {
     @Bean
-    public BCryptPasswordEncoder passwordEncoder(){
+    public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http.authorizeHttpRequests()
@@ -33,10 +34,13 @@ public class SecurityConfiguration {
                         "/index",
                         "/home",
                         "/shopping-cart-add/**",
-                        "/shopping-cart/**"
+                        "/shopping-cart-remove/**",
+                        "/shopping-cart/**",
+                        "/user-consultancies/**",
+                        "/show-consultancy/**"
 
                 ).permitAll()
-                .requestMatchers("/admin-register", "/add-product")
+                .requestMatchers("/admin-register", "/add-product", "/update-product", "/all-orders","/delete-product")
                 .hasAuthority("ADMIN")
                 .anyRequest()
                 .authenticated()

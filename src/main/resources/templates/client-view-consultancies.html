@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head th:replace="fragments/header :: header-css"></head>
+
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+
+<section class="h-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-10 col-xl-8">
+                <div class="card" style="border-radius: 10px;">
+                    <div sec:authorize="hasAuthority('CLIENT')" class="card-header px-4 py-5">
+                        <h5 class="text-muted mb-0">Thanks for your consultancy request , <span style="color: #A8729A;"
+                                                                                                th:text="${clientProfile.getFirstName()} + ' '+${clientProfile.getLastName()} "></span>!
+                        </h5>
+                    </div>
+
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <p class="lead fw-normal mb-0" style="color: #A8729A;">The data you have entered:</p>
+                            <p class="small text-muted mb-0" th:text="'Consultancy id: '+ ${consultancy.getId()}"></p>
+                        </div>
+
+                        <div class="card shadow-0 border mb-4">
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Average monthly consumption (kw/h)</th>
+                                        <th scope="col">Roof type</th>
+                                        <th scope="col">Products type</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    <tr>
+                                        <td th:text="${consultancy.getAverageMonthlyConsumption()}"></td>
+                                        <td th:text="${consultancy.getRoofType.getDisplayName()}"></td>
+                                        <td th:text="${consultancy.getProductsType().getDisplayName()}"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                        <div class="d-flex justify-content-between pt-2">
+                            <p style="color: #A8729A;">Results of the consultancy:</p>
+                        </div>
+                        <div class="d-flex justify-content-between pt-2">
+                            <p>Sistem necesar:</p>
+                            <span></span>
+                        </div>
+                        <div class="d-flex justify-content-between pt-2">
+                            <p>Pret aproximativ:</p>
+                            <span></span>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+
+</html>

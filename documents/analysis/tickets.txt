@@ -1,24 +1,25 @@
-SPS-1: Create database design----------------------------------------------DONE
-SPS-2: Create system architecture design
+DONE - SPS-1: Create database design
+DONE - SPS-2: Create system architecture design
 
-SPS-3: Create spring boot template project with all the dependencies-------DONE
-SPS-4: Configure database connection and database scheme-------------------DONE
-SPS-5: Create hibernate model----------------------------------------------DONE
+DONE - SPS-3: Create spring boot template project with all the dependencies
+DONE - SPS-4: Configure database connection and database scheme
+DONE - SPS-5: Create hibernate model
 
-SPS-6: Create dummy index page---------------------------------------------DONE
-SPS-7: Configure spring security...........................................DONE
+DONE - SPS-6: Create dummy index page
+DONE - SPS-7: Configure spring security
 
-SPS-8 Implement log in-----------------------------------------------------DONE
+DONE - SPS-8 Implement log in:
         As a user I should be able to log in into my account. The following details are mandatory to login: email and password.
         If the login details don’t match to an existent account, a message will be displayed. If the login details match an
         existing account then the user will be redirected to the home page.
         The system will validate the following data:
              -email as username
              -password
-SPS-9 Implement log out----------------------------------------------------DONE
+
+DONE - SPS-9 Implement log out:
         As a user I should be able to log out
 
-SPS-10: Implement admin register page (private, only for admin role)........DONE
+DONE - SPS-10: Implement admin register page (private, only for admin role):
         As an admin I should be able to create a new account with the following details:
         email as username, password and repeat password(it is mandatory that passwords be the same).
         If the register process is successful the system will allocate a unique id to the new user.
@@ -26,7 +27,8 @@ SPS-10: Implement admin register page (private, only for admin role)........DONE
              -email to be not blank, not empty and not allocated to another user
              -password to be not blank, not empty and larger than 8 characters
              -repeat password is mandatory be the same as the password
-SPS-11: Implement client register page (public)............................DONE
+
+DONE - SPS-11: Implement client register page (public):
         As a client I should be able to create a personal account with the following details:
         email as username, password and repeat password(it is mandatory that passwords be the same).
         If the register process is successful the system will allocate a unique id to the new client.
@@ -34,7 +36,8 @@ SPS-11: Implement client register page (public)............................DONE
              -email to be not blank, not empty and not allocated to another user
              -password to be not blank, not empty and larger than 8 characters
              -repeat password is mandatory be the same as the password
-SPS-12: Implement product creation-----------------------------------------DONE
+
+DONE - SPS-12: Implement product creation:
         As an admin I should be able to add a new product with the following details: id, name, price, stock quantity,
         description, specification. If the creation process is successful, the system will allocate a unique id to the new product.
            The system will validate the following data:
@@ -44,15 +47,19 @@ SPS-12: Implement product creation-----------------------------------------DONE
              -stock quantity to be not blank, not empty, higher than 0. If the stock quantity is equal to 0,
              a message must be printed.
              -specification to be not blank and not empty.
-SPS-13: Implement add to cart----------------------------------------------DONE
+
+DONE - SPS-13: Implement add to cart:
         As a client I should be able to add a product in my cart.
-SPS-14: Implement view all products:---------------------------------------DONE
+
+DONE - SPS-14: Implement view all products:
         As a user I should be able to view all the existing products.
-SPS-15:Implement delete product:-------------------------------------------DONE
+
+DONE - SPS-15:Implement delete product:
                As an admin I should be able to delete an existing product by id from the system. If the given id is found
                in the system the product will be deleted and a message will be shown on the screen. If the given id is not found
                in the system an appropriate error message will be shown on the screen.
-SPS-16: Implement update product:------------------------------------------DONE
+
+DONE - SPS-16: Implement update product:
         As an admin I should be able to update the details of an existing product. If the product is found by id in the system,
         I should be able to update the following data:
              -name,
@@ -67,18 +74,19 @@ SPS-16: Implement update product:------------------------------------------DONE
              -stock quantity to be not blank, not empty, higher than 0. If the stock quantity is equal to 0,
              a message must be printed.
              -specification to be not bland and not empty.
-SPS-17: Implement admin view all orders:---------------------------------DONE
+
+DONE - SPS-17: Implement admin view all orders:
         As an admin I should be able to view all the existing orders
 
-SPS-18: Implement admin delete an order, view details about an order or update order's status---DONE
+DONE - SPS-18: Implement admin delete an order, view details about an order or update order's status
 
-SPS-19: Implement view cart:---------------------------------------------DONE
+DONE - SPS-19: Implement view cart:
         As a client I should be able to view products from my cart.
 
-SPS-20: Implement send order:--------------------------------------------DONE
+DONE - SPS-20: Implement send order:
         As a client I should be able to send an order
 
-SPS-21: Implement edit cart content:-------------------------------------DONE
+DONE - SPS-21: Implement edit cart content:
         As a client I should be able to create a personal shopping cart by adding products, to delete a product
         from my basket and to update the basket.
 

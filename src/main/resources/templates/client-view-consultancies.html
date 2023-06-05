@@ -51,14 +51,102 @@
                         <div class="d-flex justify-content-between pt-2">
                             <p style="color: #A8729A;">Results of the consultancy:</p>
                         </div>
+
+
+                        <div th:if="${consultancy.getAverageMonthlyConsumption()} < 50">
                         <div class="d-flex justify-content-between pt-2">
-                            <p>Sistem necesar:</p>
+                            <p>Necessary system: You need a 1kw system!</p>
                             <span></span>
                         </div>
                         <div class="d-flex justify-content-between pt-2">
-                            <p>Pret aproximativ:</p>
+                            <p>Approximate price: 7000 RON</p>
                             <span></span>
                         </div>
+                        </div>
+
+
+                        <div th:if="${consultancy.getAverageMonthlyConsumption() > 50 && consultancy.getAverageMonthlyConsumption() < 100}">
+                            <div class="d-flex justify-content-between pt-2">
+                                <p>Necessary system: You need a 1.kw system!</p>
+                                <span></span>
+                            </div>
+                            <div class="d-flex justify-content-between pt-2">
+                                <p>Approximate price: 8500 RON</p>
+                                <span></span>
+                            </div>
+                        </div>
+
+
+                        <div th:if="${consultancy.getAverageMonthlyConsumption() > 100 && consultancy.getAverageMonthlyConsumption() < 200}">
+                            <div class="d-flex justify-content-between pt-2">
+                                <p>Necessary system: You need a 2.5kw system!</p>
+                                <span></span>
+                            </div>
+                            <div class="d-flex justify-content-between pt-2">
+                                <p>Approximate price: 14000 RON</p>
+                                <span></span>
+                            </div>
+                        </div>
+
+
+
+                        <div th:if="${consultancy.getAverageMonthlyConsumption() > 200 && consultancy.getAverageMonthlyConsumption() < 300}">
+                            <div class="d-flex justify-content-between pt-2">
+                                <p>Necessary system: You need a 4kw system!</p>
+                                <span></span>
+                            </div>
+                            <div class="d-flex justify-content-between pt-2">
+                                <p>Approximate price: 20000 RON</p>
+                                <span></span>
+                            </div>
+                        </div>
+
+
+
+
+                        <div th:if="${consultancy.getAverageMonthlyConsumption() > 300 && consultancy.getAverageMonthlyConsumption() < 500}">
+                            <div class="d-flex justify-content-between pt-2">
+                                <p>Necessary system: You need a 5kw system!</p>
+                                <span></span>
+                            </div>
+                            <div class="d-flex justify-content-between pt-2">
+                                <p>Approximate price: 26000 RON</p>
+                                <span></span>
+                            </div>
+                        </div>
+
+
+
+                        <div th:if="${consultancy.getAverageMonthlyConsumption() > 500 && consultancy.getAverageMonthlyConsumption() < 1000}">
+                            <div class="d-flex justify-content-between pt-2">
+                                <p>Necessary system: You need a 10kw system!</p>
+                                <span></span>
+                            </div>
+                            <div class="d-flex justify-content-between pt-2">
+                                <p>Approximate price: 50000 RON</p>
+                                <span></span>
+                            </div>
+                        </div>
+
+
+
+                        <div th:if="${consultancy.getAverageMonthlyConsumption() > 1000 && consultancy.getAverageMonthlyConsumption() < 2000}">
+                            <div class="d-flex justify-content-between pt-2">
+                                <p>Necessary system: You need a 20kw system!</p>
+                                <span></span>
+                            </div>
+                            <div class="d-flex justify-content-between pt-2">
+                                <p>Approximate price: 120000 RON</p>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <div th:if="${consultancy.getAverageMonthlyConsumption()} > 2000">
+                            <div class="d-flex justify-content-between pt-2">
+                                <p>Please contact us!</p>
+                                <span></span>
+                            </div>
+
 
 
                     </div>

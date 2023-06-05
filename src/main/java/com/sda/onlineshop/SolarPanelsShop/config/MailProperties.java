@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableConfigurationProperties
-@ConfigurationProperties(prefix = "sda.mail")
+@ConfigurationProperties(prefix = "cristi")
 
 public class MailProperties {
 

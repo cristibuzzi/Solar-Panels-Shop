@@ -2,10 +2,6 @@ package com.sda.onlineshop.solarpanelsshop.model;
 
 import com.sda.onlineshop.solarpanelsshop.model.constant.ProductCategory;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
 
 import java.util.Objects;
 
@@ -17,37 +13,19 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-
-    @NotNull(message = "Name must be not null!")
-    @NotBlank(message = "Name must be not blank!")
-    @Size(min = 2)
     @Column(name = "name")
     private String name;
-
-    @NotNull(message = "Model must be not null!")
-    @NotBlank(message = "Model must be not blank!")
-    @Size(min = 2)
     @Column(name = "model")
     private String model;
-
-    @NotNull(message = "Category must be not null!")
     @Enumerated(EnumType.STRING)
     @Column(name = "category")
     private ProductCategory category;
-
-    @NotNull(message = "Description must be not null!")
-    @NotBlank(message = "Description must be not blank!")
-    @Size(min = 20)
     @Column(name = "description")
     private String description;
-
-    @NotNull(message = "Price must be not null!")
     @Column(name = "price")
     private Double price;
-
     @Column(name = "promo_price")
     private Double promoPrice;
-
     @Column(name = "main_image_url")
     private String mainImageURL;
 

@@ -2,16 +2,14 @@
 
              ~~~Java Web Application used to sell solar power products and provide technical consultancy~~~
 
-~One window for login, register and forgot password for all accounts (admin and client):
+~One window for login and register for all accounts (admin and client):
   The first user will be an admin, and he will give roles to the rest of the new users.
      -allows a user to create a new account(email, password, confirm password),
-     -allows a user to login on application(email, password),
-     -allows a user to recover his password in case he forgot it(email).
+     -allows a user to login on application(email, password).
 
 ~One window for admin to make CRUD operations on products:
      -allows an admin to create a new product,
      -allows an admin to view all products,
-     -allows an admin to view a product by id,
      -allows an admin to update a product,
      -allows an admin to delete a product.
 
@@ -22,13 +20,12 @@
 
 ~One window for client:
      -allows a client to view all products,
-     -allows a client to filter products,
      -allows a client to add a products in his basket,
-     -allows a client to view, update and delete his profile,
-     -allows a client to view his basket and delete products from his basket.
+     -allows a client to view his basket and delete products from his basket,
+     -allows a client to make an order.
 
 
-~Window for login, register and forgot password for all accounts (admin and client):
+~Window for login and register for all accounts (admin and client):
    Implement register:
 As a user I should be able to create a personal account(admin or client account) with the following details:
 email as username, password and repeat password(it is mandatory that passwords be the same).
@@ -47,34 +44,21 @@ existing account then the user will be redirected to the home page.
      -email as username,
      -password
 
-   Implement forgot password:
-As a user I should be able to recover my password in case I forgot it. If the email is in the database,
-a link will be sent to that email, where the user can set another password.
-   The system will validate the following data:
-     -mail.
-
 
 ~One window for admin to make CRUD operations on products:
 
    Implement product creation:
-As an admin I should be able to add a new product with the following details: id, name, price, stock quantity,
+As an admin I should be able to add a new product with the following details: id, name, price,
 description, specification. If the creation process is successful, the system will allocate a unique id to the new product.
    The system will validate the following data:
      -name to be not blank and not empty,
      -price to be not blank, not empty, higher than 0 and not be negative,
      -description to be not blank and not empty,
-     -stock quantity to be not blank, not empty, higher than 0. If the stock quantity is equal to 0,
-     a message must be printed.
      -specification to be not blank and not empty.
 
    Implement view all products:
 As an admin I should be able to view all the existing products. I should be able to view a list where each line
-will contain details about products(id, name, price and stock quantity).
-
-   Implement view product by id:
-As an admin I should be able to view all the details of an existing product by id. If the given id is found in the
-system, the following details will be shown on the screen: id, name, price, stock quantity, description, specification.
-If the given id is not found in the system, an error message will be shown on the screen.
+will contain details about products(id, name, price).
 
    Implement update product:
 As an admin I should be able to update the details of an existing product. If the product is found by id in the system,
@@ -82,14 +66,11 @@ I should be able to update the following data:
      -name,
      -price,
      -description,
-     -stock quantity,
      -specification.
    The system will validate the following data:
      -name to be not blank and not empty,
      -price to be not blank, not empty, higher than 0 and not be negative,
      -description to be not blank and not empty,
-     -stock quantity to be not blank, not empty, higher than 0. If the stock quantity is equal to 0,
-     a message must be printed.
      -specification to be not bland and not empty.
 
    Implement delete product:
@@ -116,11 +97,9 @@ in the system an appropriate error message will be shown on the screen.
 
 ~One window for client:
 As a client I should be able to view all the products the shop has.
-As a client I should be able to filter products by several possibilities.
 As a client I should be able to add a product in my cart.
-As a client I should be able to view my profile details, make changes or even delete it.
 As a client I should be able to create a personal shopping cart by adding products, to delete a product
-from my basket and to update the cart.
+from my basket, to update the cart and to make an order.
 
 
 

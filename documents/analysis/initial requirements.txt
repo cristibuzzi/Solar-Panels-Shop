@@ -1,10 +1,9 @@
 ~~~~~~~~~~~~~~~~Java Web Application used to sell solar power products and provide technical consultancy~~~~~~~~~~~~~~~~
 
-~One window for login, register and forgot password for all accounts (admin and client).
+~One window for login and register for all accounts (admin and client).
 
 ~One window for admin to make CRUD operations on products
      -view all products,
-     -view product by id,
      -adding a new product,
      -deleting a product,
      -updating a product
@@ -16,23 +15,18 @@
 
 ~One window for client:
      -view all products,
-     -filter products,
      -add products to cart,
      -make orders,
-     -make CRUD operations on basket and profile
+     -make CRUD operations on basket
 
 
-
-
-
-
-
-A java application that develops an online shop where the customer can purchase solar panels and all the accessories he needs for a complete solar power generation system. Another functionality of the application is to provide custom advice according to the customer's needs and budget.
+A java application that develops an online shop where the customer can purchase solar panels and all the accessories
+he needs for a complete solar power generation system. Another functionality of the application is to provide
+custom advice according to the customer's needs and budget.
 The application will have:
--a window where the customer or admin can create a new account, log in or retrieve their password if needed.
+-a window where the customer or admin can create a new account and login.
 -a window where the admin can make CRUD operations on products
 -a window where the admin can view and delete orders
--a window for the customer where he can see all products, filter products, add a product to the shopping cart, place orders and make CRUD operations on the shopping cart and his profile.
-- a window where the client receives custom consultancy on the products required, according to needs and budget
-
- in header <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+-a window for the customer where he can see all products, add a product to the shopping cart, place orders
+and make CRUD operations on the shopping cart.
+-a window where the client receives custom consultancy on the products required, according to needs and budget

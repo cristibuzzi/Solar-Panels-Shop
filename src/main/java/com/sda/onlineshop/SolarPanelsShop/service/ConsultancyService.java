@@ -2,7 +2,6 @@ package com.sda.onlineshop.solarpanelsshop.service;
 
 import com.sda.onlineshop.solarpanelsshop.model.ClientProfile;
 import com.sda.onlineshop.solarpanelsshop.model.ConsultancyRequest;
-import com.sda.onlineshop.solarpanelsshop.model.Order;
 import com.sda.onlineshop.solarpanelsshop.model.constant.ConsultancyProductsType;
 import com.sda.onlineshop.solarpanelsshop.model.constant.ConsultancyRoofType;
 

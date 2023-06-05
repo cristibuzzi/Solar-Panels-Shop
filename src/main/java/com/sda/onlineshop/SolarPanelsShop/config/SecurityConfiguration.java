@@ -19,28 +19,30 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http.authorizeHttpRequests()
-                .requestMatchers(
-                        "/javax",
-                        "/css/**",
-                        "/img/**",
-                        "/images/**",
-                        "/js/**",
-                        "/vendor/**",
-                        "/webjars/**",
-                        "/*/webjars/**",
-                        "/client-register/**",
-                        "/consultancy/**",
-                        "/",
-                        "/index",
-                        "/home",
-                        "/shopping-cart-add/**",
-                        "/shopping-cart-remove/**",
-                        "/shopping-cart/**",
-                        "/user-consultancies/**",
-                        "/show-consultancy/**"
+                .requestMatchers
+                        (
+                                "/javax",
+                                "/css/**",
+                                "/img/**",
+                                "/images/**",
+                                "/js/**",
+                                "/vendor/**",
+                                "/webjars/**",
+                                "/*/webjars/**",
+                                "/client-register/**",
+                                "/consultancy/**",
+                                "/",
+                                "/index",
+                                "/home",
+                                "/shopping-cart-add/**",
+                                "/shopping-cart-remove/**",
+                                "/shopping-cart/**",
+                                "/user-consultancies/**",
+                                "/show-consultancy/**"
 
-                ).permitAll()
-                .requestMatchers("/admin-register", "/add-product", "/update-product", "/all-orders","/delete-product")
+                        )
+                .permitAll()
+                .requestMatchers("/admin-register", "/add-product", "/update-product", "/all-orders", "/delete-product")
                 .hasAuthority("ADMIN")
                 .anyRequest()
                 .authenticated()

@@ -9,6 +9,7 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.WebApplicationContext;
 
+import javax.mail.MessagingException;
 import java.util.*;
 
 
@@ -20,11 +21,13 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     private final UserService userService;
     private final OrderRepository orderRepository;
     private final ProductOrderRepository productOrderRepository;
+    private final MailService mailService;
 
-    public ShoppingCartServiceImpl(UserService userService, OrderRepository orderRepository, ProductOrderRepository productOrderRepository) {
+    public ShoppingCartServiceImpl(UserService userService, OrderRepository orderRepository, ProductOrderRepository productOrderRepository, MailService mailService) {
         this.userService = userService;
         this.orderRepository = orderRepository;
         this.productOrderRepository = productOrderRepository;
+        this.mailService = mailService;
     }
 
     @Override
@@ -91,6 +94,17 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
             productOrderRepository.save(productOrder);
         }
 
+        try {
+            mailService.sendEmail
+                    (
+                            "cristi_panels_shop@yahoo.com",
+                            userEmail,
+                            "You have a new Order",
+                            "We hope you were pleased with your experience with us!"
+                    );
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
         cart.clear();
     }
 
